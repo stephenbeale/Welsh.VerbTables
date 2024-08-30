@@ -7,23 +7,19 @@
 <h1>Verb</h1>
 
 <div>
-    <h4>Verb</h4>
+    <h4>Verb Search</h4>
     <hr />
     <div>
-        <p>Type in a verb to search for in our list:</p>
+        <p>Type in a verb below to search for it in our list:</p>
     </div>
-    <div class="row">
-        <div class="col-12 mb-1">
-        <input type="text" id="searchString" name="searchString" class="form-control"/>    
-        </div>
+    <div class="col">
+        <div class="row-cols-1">
+        <input type="text" id="searchString" name="searchString" class="form-control"/>            
         <div class="col-12 mb-3">
         <button type="button" class="btn btn-primary">Submit</button>
         </div>
     </div>
-        
-
-
-    
+           
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
