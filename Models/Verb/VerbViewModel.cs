@@ -3,6 +3,6 @@
     public class VerbViewModel
     {
         public int Id { get; }
-        public string Verb { get; set; }        
+        public string? Verb { get; set; }        
     }
 }

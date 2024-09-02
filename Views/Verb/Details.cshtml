@@ -1,0 +1,112 @@
+﻿@{
+    void VerbHeader(string verb)
+    {
+        <h2>@verb</h2>
+    }
+}
+
+@{
+    void TenseHeader(string tense)
+    {
+        <h3>@tense</h3>
+    }
+}
+
+@*@{
+    void SubjectPronounHelper(string register) {
+
+        switch {
+            case 1: "formal" {
+
+                }
+        }
+    }
+}*@
+
+@{
+    void VerbTable(string verb)
+    {
+        <table>
+            <thead>@verb</thead>
+            <tr>
+                <td>Dw i'n</td>
+                <td>@verb</td>
+            </tr>
+            <tr>
+                <td>Ti'n</td>
+                <td>@verb</td>
+            </tr>
+            <tr>
+                <td>Mae e'n</td>
+                <td>@verb</td>
+            </tr>
+            <tr>
+                <td>Mae hi'n</td>
+                <td>@verb</td>
+            </tr>
+            <tr>
+                <td>Mae o'n</td>
+                <td>@verb</td>
+            </tr>
+            <tr>
+                <td>Dyn ni'n</td>
+                <td>@verb</td>
+            </tr>
+            <tr>
+                <td>Maen nhw'n</td>
+                <td>@verb</td>
+            </tr>
+        </table>
+    }
+}
+
+@model Welsh.VerbTables.Models.Verbs.VerbViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>View</h1>
+
+<div>
+    <h4>VerbViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)            
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Verb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Verb)
+        </dd>
+    </dl>
+</div>
+
+<h1>My Sketching</h1>
+
+
+@*Trying to create multiple tables from the function above.*@
+    <div class="container">        
+    @{
+        VerbHeader("hoffi")
+        TenseHeader("Present");
+        VerbTable("hoffi");
+        TenseHeader("Past Simple");
+                TenseHeader("Past Continuous");
+                TenseHeader("Future Simple");
+                TenseHeader("Future Continuous");
+                TenseHeader("Present Subjunctive");
+                TenseHeader("Imperfect Subjunctive");
+            }        
+    </div>     
+
+    <div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
